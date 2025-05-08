@@ -1,5 +1,5 @@
 
-# A Comprehensive Comparison of TypeScript Type vs Interface
+# TypeScript: Type vs Interface – What’s the Difference?
 
 TypeScript is a tool that builds on top of JavaScript and adds types to your code. This helps catch mistakes early and makes your code easier to understand. In TypeScript, you can describe the shape of data using types or interfaces. They seem very similar, so it can be confusing to know which one to use. In this post, we’ll explain the main differences between type and interface in a simple way, and show you when to use each.
 
@@ -34,14 +34,40 @@ type uses & (intersection)
 
 ![Screenshot](./images/pb-3.PNG)
 
+# When to Use What?
+
+Use interface when defining object shapes, especially for class-based designs.
+Use type when working with unions, intersections, tuples, or primitives.
+
 # Conclusion
 
-TypeScript’s type and interface are both great tools to help you write clear and organized code. While they seem similar, they each have special uses.
-By knowing when to use type or interface, you can make your code cleaner, easier to understand, and more powerful.
-So as you work with TypeScript, remember their differences and use the one that fits best. This will help you build stronger, more reliable projects — and enjoy coding even more! 
+Both type and interface are powerful tools in TypeScript. The choice depends on your use case. Understanding their differences helps you write more readable, maintainable, and scalable code.
 
+# Understanding Union and Intersection Types in TypeScript
 
+TypeScript gives developers powerful tools to describe complex data structures. Two of the most useful features are union and intersection types. These allow us to combine types in different ways to write safer and more flexible code.
 
+# Union Types (|):
 
-TypeScript’s any vs unknown vs never: When and How to Use Them
+The type of a variable or expression can consist of multiple types. This is called a union type. 
+It allows you to store a value of one of several types in a variable.
+
+![Screenshot](./images/pb-4.PNG)
+
+Here, id can be a number or a string.
+Union types are helpful when you want a variable to support different types of input (like numbers or strings).
+
+# Intersection Types (&):
+
+An intersection type creates a new type by combining multiple existing types. The new type has all features of the existing types.
+Intersection types are useful when you want to merge multiple types to create a more detailed structure. 
+To combine types, you use the & operator.
+
+![Screenshot](./images/pb-4.PNG)
+
+Here, AdminUser must have both name (from User) and role (from Admin).
+
+# Conclusion
+
+Union and intersection types in TypeScript help make our code more flexible and safer. Use unions when a value can be multiple types, and use intersections when a value must meet multiple type conditions.
 
