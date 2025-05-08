@@ -3,9 +3,9 @@ function formatString(input: string, toUpper?: boolean): string {
     if (toUpper === false) {
         return input.toLowerCase();
     }
-    else{
+    else {
         return input.toUpperCase();
-    }    
+    }
 }
 
 
@@ -15,17 +15,17 @@ function filterByRating(items: { title: string; rating: number }[]): { title: st
 
 
 
-function concatenateArrays<T>(...arrays: T[][]): T[]{
+function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.reduce((acc, curr) => acc.concat(curr), []);
 }
 
 
 
 class Vehicle {
-    private make : string;
-    private year : number;
-    
-    constructor(make:string, year:number){
+    private make: string;
+    private year: number;
+
+    constructor(make: string, year: number) {
         this.make = make;
         this.year = year;
     }
@@ -33,28 +33,28 @@ class Vehicle {
         return `"Make: ${this.make}, Year: ${this.year}"`;
     }
 }
-class Car extends Vehicle{
-    private model : string;
+class Car extends Vehicle {
+    private model: string;
 
-    constructor(make: string, year: number, model: string){
+    constructor(make: string, year: number, model: string) {
         super(make, year);
         this.model = model;
     }
 
-    public getModel(): string{
+    public getModel(): string {
         return `"Model : ${this.model}"`;
     }
 }
 
 
 
-function processValue(value: string | number): number{
-    if(typeof value === "string"){
+function processValue(value: string | number): number {
+    if (typeof value === "string") {
         return value.length;
     }
 
-    else if(typeof value === "number"){
-        return value*2;
+    else if (typeof value === "number") {
+        return value * 2;
     }
 
     throw new Error("Invalid type.");
@@ -66,12 +66,12 @@ function processValue(value: string | number): number{
 interface Product {
     name: string;
     price: number;
-  }
-  
-function getMostExpensiveProduct(products: Product[]): Product | null{
-    if(products.length === 0) return null;
+}
 
-    return products.reduce((mostExpensive, current)=>{
+function getMostExpensiveProduct(products: Product[]): Product | null {
+    if (products.length === 0) return null;
+
+    return products.reduce((mostExpensive, current) => {
         return current.price > mostExpensive.price ? current : mostExpensive;
     })
 }
@@ -86,28 +86,27 @@ enum Day {
     Friday,
     Saturday,
     Sunday
-  }
-  
-  function getDayType(day: Day): string{
-    if(day === Day.Saturday || day === Day.Sunday){
+}
+
+function getDayType(day: Day): string {
+    if (day === Day.Saturday || day === Day.Sunday) {
         return "weekend"
     }
-    else{
+    else {
         return "weekday"
     }
-  }
-  
-  
+}
 
-async function squareAsync(n: number): Promise<number>{
-    return new Promise((resolve, reject) =>{
-        setTimeout(()=>{
-            if(n<0){
-                reject (new Error("Negative number is not allowed"))
-            }
-            else{
-                resolve(n*n)
-            }
+
+
+async function squareAsync(n: number): Promise<number> {
+    if (n < 0) {
+        return Promise.reject(new Error("Negative number is not allowed"));
+    }
+
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(n * n);
         }, 1000);
     });
 }
