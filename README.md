@@ -25,6 +25,8 @@ One big difference is that type can be used with primitive values like string, n
 type Name = string;  //  Works
 // interface Name = string;  Invalid
 
+![Screenshot](./pb-1.PNG)
+
 Both type and interface can define the shape of an object, meaning they describe what properties an object should have and their types.
 
 type UserType = {
@@ -60,4 +62,7 @@ By knowing when to use type or interface, you can make your code cleaner, easier
 So as you work with TypeScript, remember their differences and use the one that fits best. This will help you build stronger, more reliable projects — and enjoy coding even more! 
 
 
+
+
+TypeScript’s any vs unknown vs never: When and How to Use Them
 
